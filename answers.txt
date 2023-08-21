@@ -1,0 +1,61 @@
+Part 1: Solidify Terminology
+
+What is HTTP?
+    HTTP (Hypertext Transfer Protocol) is the format and set of rules that govern how browsers and servers communicate with each other.
+
+What is a URL?
+    A URL (Universal Resource Locator) is an address to an internet resource.
+
+What is DNS?
+    DNS (Domain Name System) is a human-readable nickname that refers to the IP address of a server.
+
+What is a query string?
+    A query string provides extra information (i.e. search terms, information from forms, etc.) to the server which may be used to change the web page. It may also be used by JavaScript for other purposes.
+
+What are two HTTP verbs and how are they different?
+    Two HTTP verbs are GET and POST. GET is used for requests that have no side effects, meaning they don't change server data. Arguments are usually passed along in the query string. They are typically triggered by the user entering a URL in the browser, clicking on links, and *some* form submissions. POST is used for requests that WILL have side effects. The arguments are usually sent as the body of the request. POST requests are triggered by *some* form submissions, but never by entering a URL in the browser or clicking links.
+
+What is an HTTP request?
+    An HTTP request is a request from a client to a server that follows the HTTP protocol, such as requesting the HTML, CSS, or JavaScript for a web page.
+
+What is an HTTP response?
+    An HTTP response is a response from a server to a client that follows the HTTP protocol, such as sending back the HTML, CSS, or JavaScript content for a web page.
+
+What is an HTTP header? Give a couple examples of request and response headers you have seen.
+    Headers provide additional information about the request or the response. Some examples are:
+        Request headers: Host, User-Agent, Accept, Cookie, Cache-Control
+        Response headers: Content-Type, Last-Modified, Set-Cookie, Cache-Control
+
+What happens when you type a URL in a browser?
+    The browser resolves the hostname into an IP address using DNS.
+
+    The browser makes a request to that IP address, including headers (info about browser, any previous cookies, and other things).
+
+    The server sends a response (typically HTML) with a status code 200 if it was sucessful.
+
+    The browser makes a DOM from that HTML, and finds any other resources needed (images, CSS, JavaScript, etc).
+
+    The browser makes separate HTTP requests for those resources and receives response from the server for each
+
+Part 2: Practice Tools
+
+Using curl, make a GET request to the icanhazdadjoke.com API to find all jokes involving the word “pirate”
+    curl https://icanhazdadjoke.com/search?term=pirate
+        Joke	
+        What does a pirate pay for his corn? A buccaneer!
+
+        What did the pirate say on his 80th birthday? Aye Matey!
+
+        Why couldn't the kid see the pirate movie? Because it was rated arrr!
+
+        Why do pirates not know the alphabet? They always get stuck at "C".
+
+        Why are pirates called pirates? Because they arrr!
+
+
+Use dig to find what the IP address is for icanhazdadjoke.com
+    dig https://icanhazdadjoke.com/
+        SERVER: 172.23.160.1
+
+Make a simple web page and serve it using python3 -m http.server. Visit the page in a browser.
+    To visit a page using a Python simple server, you navigate in your terminal to the desired directory containing the HTML file you want to serve. Then you enter the command python3 -m http.server to initialize the simple server within that directory. Now you can open your browser and enter localhost:8000/yourpage.html in the address bar to view the page.
